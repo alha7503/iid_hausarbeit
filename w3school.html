@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        
+    </style>
+    <title>Document</title>
+</head>
+
+    <!--
+    <h2>Add User</h2>
+    <form action="">
+        <input type="text" value="" id="add_user">
+        <input type="submit" onclick="addUser(this)">
+    </form>
+-->
+<body>
+    <h2>Niklas</h2>
+    <ul id="ul0">
+    </ul>
+    <form action="">
+        <input type="text" value="Blaubeeren" id="input0">
+        <input type="submit" onclick="addGrocery(this)">
+    </form>
+    
+</body>
+
+<script>
+    i = 0;
+    j = 1;
+
+    
+    function addGrocery(this_){
+        
+        num = this_.id.slice(-1);
+        
+        console.log(num);
+        console.log(this_.value);
+
+        const para = document.createElement("p");
+        const p_node = document.createTextNode(this_.value);
+        para.appendChild(p_node);
+        para.style.display = "inline";
+
+        const anker = document.createElement("a");
+        const a_node = document.createTextNode("\u2716");
+        anker.appendChild(a_node);
+        anker.setAttribute("onclick", "removeGrocery(this)");
+        anker.setAttribute("id", "anker" + num + "" + i)
+     
+        const lino = document.createElement("li");
+        lino.appendChild(para);
+        lino.appendChild(anker);
+        lino.setAttribute("id", "zutat" + num + "" + i);
+        i++;
+
+        const element = document.getElementById("ul0").appendChild(lino);
+    }
+
+    function removeGrocery(this_){
+        const id_ = this_.id;
+        var elements = document.getElementsByClassName(class_);
+
+        for(i=0; i<elements.length; i++){
+            var element = elements[i];
+            var parent = element.parentNode;
+            parent.removeChild(element);
+        }
+        console.log("hallo removed");
+    }
+
+    function addUser(name){
+
+        var body = document.getElementsByTagName("body");
+
+        const h2 = document.createElement("h2");
+        const n_node = document.createTextNode(name);
+        h2.appendChild(n_node);
+
+        const ul = document.createElement("ul");
+        ul.setAttribute("id", "ul" + j);
+
+        
+        const input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("id", "grocery" + j);
+
+        const submit = document.createElement("input");
+        submit.setAttribute("type", "submit");
+        submit.setAttribute("onclick", "addGrocery(this)");
+
+        const form = document.createElement("form");
+        form.appendChild(input);
+        form.appendChild(submit);
+
+    }
+
+    
+        
+
+
+</script>
+</html>
+
+
+<!--
+
+    li::before{
+        content: "\A";
+        white-space: normal;
+    }
+
+    .myDropdown{
+        display: none;
+    }
+
+    .show{
+        display: block;
+    }
+
+
+    <h1 class="toggle" onclick="myFunction()">Wolken</h1>
+    <ul class="myDropdown" id="drop_id">
+        <li>Stratus</li>
+        <li>Cirrus</li>
+        <li>Stratocumulus</li>
+        <input type="text" name="" id="">
+    </ul>
+
+    Ok in the next message I will send you an error I received. And in the following message I will send you the code. And I want you to only explain me, how I fix the error. So far I already know, that the error is caused, because .removeChild(element) takes a node as argument, not an element object. Can you explain to me how I can get the corresponding node object of an element object? 
+-->

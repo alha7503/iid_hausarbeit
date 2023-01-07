@@ -1,0 +1,82 @@
+<!--
+    Dies wird der Designentwurf
+    Aufgabe 1:  Kreiere eine Menüleiste mit position:sticky, sodass sie wie bspw. in Whatsapp am unteren Bildschirmrand fixiert ist.
+                Sorge dafür, dass die Website die Bildschirmmaße des Mobilgerätes verwendet
+    Aufagbe 2:  Kreiere die nav-bar so, dass die Icons mit einer gap positioniert werden und jeweils auf die maximale ihnen zur Verfügung stehenden
+                Breite wachsen.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --p_pic_width: 120px;
+        }
+        
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            text-align: center;
+        }
+
+        .frame{
+            
+            position: relative;
+            padding: 40px;
+        }
+
+        
+
+        .nav{
+            position: absolute;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            
+            margin:  auto;
+        }
+        .nav-link > img{
+            width: 50%;
+            /*box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);*/
+        }
+
+        #surfer{
+            width: var(--p_pic_width);
+            height: var(--p_pic_width);
+            border-radius: 50%;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="frame">
+        <img id="surfer" src="material/surfer.png" alt="">
+
+        <nav class="nav">
+            <a href="#" class="nav-link" id="link_profile">
+                <img src="material/profil.png" alt="">
+            </a>
+            <a href="#" class="nav-link">
+                <img src="material/summary.png" id="link_summary" alt="">
+            </a>
+            <a href="#" class="nav-link">
+                <img src="material/bubble-chat.png" id="link_chat" alt="">
+            </a>
+        </nav>
+    </div>
+</body>
+</html>
